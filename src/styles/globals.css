@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --color-main: 255, 255, 255;
+  --color-primary: 0, 0, 0;
+
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+
+  --color-solid-heading: #42446e;
+  --color-dark-content: #666666;
+  --color-light-content: #a7a7a7;
+
+  --color-success: #d7ffe0;
+  --color-success-text: #018c0f;
+}
+:root .dark {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --color-main: 0, 0, 0;
+  --color-primary: 255, 255, 255;
+
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --color-main: 0, 0, 0;
+  }
+}
+
+/* 
+  100% = 1rem  = 16px
+  1%  = 1/100 = 16/100
+
+  1rem = 16px = 100%
+  1rem/16 = 1px = 100%/16
+  10 * (1rem/16) = 10px = 10 * (100%/16)
+*/
+html {
+  font-size: 62.5%;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+  background-color: rgb(var(--color-main));
+  /* color: rgb(var(--color-primary)); */
+
+  width: calc(100vw - 14rem * 2);
+  margin: auto;
+  font-size: 1.6rem;
+}
+
+.colored {
+  /* color: E70FAA E70FAA; */
+  /* color: #e70faa; */
+  background: linear-gradient(to right, #13b0f5, #e70faa);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.color-1 {
+  color: #13b0f5;
+}
+.color-2 {
+  color: #e70faa;
+}
+.color-dark-content {
+  color: #666666;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

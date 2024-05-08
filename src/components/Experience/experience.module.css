@@ -1,0 +1,86 @@
+.container {
+  margin: 10rem 0 0 0;
+}
+.contentBox {
+  display: flex;
+
+  margin-top: 3rem;
+
+  color: var(--color-dark-content);
+}
+
+.educationDetails {
+  flex: 1;
+  margin-right: 1rem;
+
+  /* border: 1px solid red; */
+}
+.workExperienceDetails {
+  flex: 1;
+  margin-left: 1rem;
+
+  /* border: 1px solid red; */
+}
+
+.part_1,
+.part_2,
+.t1,
+.t2,
+.location_name,
+.institute_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.part_1 .t1 {
+  font-size: 2rem;
+}
+.part_1 .t2 {
+  font-size: 1rem;
+}
+
+.part_2 .t1 {
+  font-size: 1.5rem;
+  color: var(--color-light-content);
+}
+.part_2 .t2 {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--color-light-content);
+}
+.part_2 .t2 svg {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.institute_name,
+.location_name {
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.institute_name svg,
+.location_name svg {
+  margin-right: 0.5rem;
+}
+
+.detailsListItem {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-bottom: 2px solid var(--color-dark-content);
+}
+
+.heading {
+  font-size: 3rem;
+  color: var(--color-solid-heading);
+}
+
+.tag {
+  background-color: var(--color-success);
+  color: var(--color-success-text);
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+}

@@ -1,0 +1,35 @@
+.about {
+  margin: 10rem 0 0 0;
+}
+.about_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 3rem;
+}
+.left {
+  border: 5px solid;
+  border-radius: 50%;
+
+  min-height: 20rem;
+  min-width: 20rem;
+  height: 15rem;
+  width: 15rem;
+
+  margin-right: 2rem;
+
+  font-size: 2.4rem;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: var(--color-dark-content);
+}
+.about_me {
+  color: var(--color-dark-content);
+  text-align: justify;
+}

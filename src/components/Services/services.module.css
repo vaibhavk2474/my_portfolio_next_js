@@ -1,0 +1,88 @@
+.container {
+  margin: 10rem 0 0 0;
+}
+
+.list {
+  margin-top: 1rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.list_item {
+  padding: 2rem;
+}
+.inner_box {
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 2rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  /* background-color: #e3e3e3; */
+
+  width: 35rem;
+  /* height: 30rem; */
+  cursor: pointer;
+}
+.inner_box:hover {
+  background: #fafafa;
+}
+
+.logo {
+  /* border: 1px solid red; */
+  display: inline-block;
+  /* background: linear-gradient(to right, #13b0f5, #e70faa); */
+  /* background: #13b0f5; */
+  /* box-shadow: -2px -2px #e70faa; */
+}
+.logo svg,
+.logo img {
+  height: 5rem;
+  width: 5rem;
+}
+
+.list_item .service_name {
+  color: var(--color-black);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.list_item .service_summary {
+  color: var(--color-light-content);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: normal;
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+.service_tech_details {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.service_tech_details .tech_box {
+  padding: 0.7rem 1rem;
+  border-radius: 10px 0 10px 0;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(97 219 251/1);
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.service_view {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  background: var(--color-success);
+  padding: 1rem;
+
+  cursor: pointer;
+}

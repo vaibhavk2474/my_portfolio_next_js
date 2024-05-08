@@ -1,0 +1,43 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10rem 0;
+}
+
+.heading {
+  font-size: 6rem;
+  font-weight: 600;
+
+  color: #42446e;
+}
+
+.colored {
+  /* color: E70FAA E70FAA; */
+  /* color: #e70faa; */
+  background: linear-gradient(to right, #13b0f5, #e70faa);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* image */
+.profile_img_box {
+  background: linear-gradient(to bottom, #e70faa, #00c0fd);
+  padding: 0.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile_img_box .profile_img {
+  /* E70FAA */
+  /* border-image: linear-gradient(to right, #00c0fd, #e70faa) 1;
+  border-radius: 50%;
+  border: 5px solid transparent; */
+  border-radius: 50%;
+
+  height: 40rem;
+  width: 40rem;
+}
