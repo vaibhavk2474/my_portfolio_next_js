@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import styles from "./home.module.css";
 import Image from "next/image";
+import { ReactTyped } from "react-typed";
 
 function Home() {
   return (
@@ -9,7 +12,14 @@ function Home() {
         Hi 👋, <br />
         My name is <br />
         <span className={styles.colored}>Vaibhav Kumar</span> <br />I am{" "}
-        <span className={styles.colored}> React Developer</span>
+        <span className={styles.colored}>
+          <ReactTyped
+            strings={["ReactJs Developer", "NextJs Developer"]}
+            typeSpeed={60}
+            backSpeed={60}
+            loop
+          ></ReactTyped>
+        </span>
       </h1>
       <div className={styles.profile_img_box}>
         <Image

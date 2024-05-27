@@ -1,0 +1,40 @@
+.heading_part {
+  display: flex;
+  align-items: center;
+
+  padding: 2.5rem 4rem 2.5rem 4rem;
+}
+
+.heading_info {
+  /* display: flex; */
+}
+.img_box img {
+  width: 120px;
+  height: 120px;
+
+  min-width: 120px;
+  min-height: 120px;
+
+  border-radius: 50%;
+
+  margin-right: 2rem;
+}
+
+.heading_info .name {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 400;
+}
+
+.heading_info .post {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.heading_info .intro {
+  font-size: 1.3rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+}

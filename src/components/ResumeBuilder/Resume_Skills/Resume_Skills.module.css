@@ -1,0 +1,25 @@
+/* skills */
+.title_heading {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: rgba(49, 60, 78, 1);
+}
+.skills_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills_list_item {
+  /* background: #757575; */
+  background: #989da6;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+
+  font-size: 1.3rem;
+
+  margin-right: 0.7rem;
+  margin-bottom: 0.5rem;
+}

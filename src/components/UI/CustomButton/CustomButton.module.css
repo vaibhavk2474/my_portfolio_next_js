@@ -1,0 +1,18 @@
+.customBtn {
+  border: 1px solid var(--color-dark-content);
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all ease 0.5s;
+}
+.customBtn:hover {
+  background: var(--color-dark-content);
+  color: #fff;
+}
+.customBtn:hover svg {
+  fill: #fff;
+}

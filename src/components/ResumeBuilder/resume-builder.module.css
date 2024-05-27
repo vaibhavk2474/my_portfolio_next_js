@@ -1,0 +1,33 @@
+.main_container {
+  /* border: 1px solid red; */
+}
+.resume_container {
+  margin: 2rem auto;
+}
+.resume_page {
+  border-radius: 5px;
+  border: 1px solid rgba(102, 103, 102, 1);
+
+  width: 900px;
+  /* height: 900px; */
+  margin: 0 auto;
+}
+.title_heading {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.infomation_box {
+  padding: 2.5rem 4rem 2.5rem 4rem;
+  display: flex;
+}
+
+.left_box {
+  flex: 1;
+  margin-right: 5rem;
+}
+.right_box {
+  flex: 1;
+}

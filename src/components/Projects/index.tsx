@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import styles from "./projects.module.css";
 import CustomHeadingWithSubheading from "../UI/CustomHeadingWithSubheading";
 import EyeIcon from "@/icons/EyeIcon";
+import { motion } from "framer-motion";
 
 const PROJECTS_LIST = [
   {
@@ -34,41 +36,53 @@ const PROJECTS_LIST = [
 
 function Projects() {
   return (
-    <section id="projects" className={styles.container}>
-      <CustomHeadingWithSubheading
-        headingText="Projects"
-        subHeadingText="Things I've built so far"
-      />
+    <motion.div
+      className="animated-content"
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
+      <section id="projects" className={styles.container}>
+        <CustomHeadingWithSubheading
+          headingText="Projects"
+          subHeadingText="Things I've built so far"
+        />
 
-      <div className={styles.list}>
-        {PROJECTS_LIST.map((cItem, index) => (
-          <div key={index} className={styles.list_item}>
-            <div className={styles.inner_box}>
-              <div className={styles.project_name}>
-                <a href="https://redux-toolkit.js.org/" target="_blank">
-                  {cItem.projectName}
-                </a>
+        <div className={styles.list}>
+          {PROJECTS_LIST.map((cItem, index) => (
+            <motion.div whileHover={{ scale: 1.05 }} key={index}>
+              <div className={styles.list_item}>
+                <div className={styles.inner_box}>
+                  <div className={styles.project_name}>
+                    <a href="https://redux-toolkit.js.org/" target="_blank">
+                      {cItem.projectName}
+                    </a>
+                  </div>
+                  <p className={styles.project_summary}>
+                    {cItem.projectSummary}
+                  </p>
+                  <div className={styles.project_tech_details}>
+                    {cItem.projectTechList.map((cItem, index) => (
+                      <span key={index} className={styles.tech_box}>
+                        {cItem}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href="https://redux-toolkit.js.org/"
+                    target="_blank"
+                    className={styles.project_view}
+                  >
+                    <EyeIcon />
+                  </a>
+                </div>
               </div>
-              <p className={styles.project_summary}>{cItem.projectSummary}</p>
-              <div className={styles.project_tech_details}>
-                {cItem.projectTechList.map((cItem, index) => (
-                  <span key={index} className={styles.tech_box}>
-                    {cItem}
-                  </span>
-                ))}
-              </div>
-              <a
-                href="https://redux-toolkit.js.org/"
-                target="_blank"
-                className={styles.project_view}
-              >
-                <EyeIcon />
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </motion.div>
   );
 }
 

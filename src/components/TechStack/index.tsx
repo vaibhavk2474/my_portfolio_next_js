@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
-import CustomHeadingWithSubheading from "../UI/CustomHeadingWithSubheading";
 import styles from "./techStack.module.css";
 import Image from "next/image";
+import CustomHeadingWithSubheading from "../UI/CustomHeadingWithSubheading";
+import { motion } from "framer-motion";
 
 const tech_stack_list = [
   {
@@ -53,27 +56,35 @@ const tech_stack_list = [
 
 function TechStack() {
   return (
-    <section className={styles.tech}>
-      <CustomHeadingWithSubheading
-        headingText="My Tech Stack"
-        subHeadingText="Technologies I’ve been working with recently"
-      />
-      <div className={styles.tech_list}>
-        {tech_stack_list.map((cItem, index) => (
-          <div key={index} className={styles.tech_item}>
-            <div className={styles.icon}>
-              <Image
-                src={`/images${cItem.img}`}
-                width={50}
-                height={50}
-                alt="react"
-              />
+    <motion.div
+      className="animated-content"
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
+      <section className={styles.tech}>
+        <CustomHeadingWithSubheading
+          headingText="My Tech Stack"
+          subHeadingText="Technologies I’ve been working with recently"
+        />
+        <div className={styles.tech_list}>
+          {tech_stack_list.map((cItem, index) => (
+            <div key={index} className={styles.tech_item}>
+              <div className={styles.icon}>
+                <Image
+                  src={`/images${cItem.img}`}
+                  width={50}
+                  height={50}
+                  alt="react"
+                />
+              </div>
+              <div className={styles.tech_name}>{cItem.name}</div>
             </div>
-            <div className={styles.tech_name}>{cItem.name}</div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </motion.div>
   );
 }
 

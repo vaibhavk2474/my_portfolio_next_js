@@ -5,7 +5,7 @@ import GithubIcon from "@/icons/GithubIcon";
 import TwitterIcon from "@/icons/TwitterIcon";
 import LinkdinIcon from "@/icons/LinkdinIcon";
 import Image from "next/image";
-import LogoImage from "../UI/CustomHeadingWithSubheading/LogoImage";
+import LogoImage from "../UI/LogoImage";
 
 function FooterUI() {
   return (

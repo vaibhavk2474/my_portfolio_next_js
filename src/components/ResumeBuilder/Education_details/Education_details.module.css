@@ -1,0 +1,45 @@
+/* education */
+.common_details_box:not(:first-child) {
+  margin-top: 3rem;
+}
+.title_heading {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: rgba(49, 60, 78, 1);
+}
+
+.degree {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+}
+
+.institute {
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+.place_date_box {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-weight: 500;
+  color: rgba(102, 103, 102, 1);
+
+  font-style: italic;
+}
+.marks {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.education_list_item {
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,34 @@
+/* contact_info */
+
+.title_heading {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: rgba(49, 60, 78, 1);
+}
+.contact_info {
+  display: flex;
+  justify-content: space-evenly;
+
+  background: #e5e5e5;
+
+  padding: 1.5rem;
+}
+
+.contact_info .contact_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.contact_info .contact_box svg {
+  margin-right: 0.5rem;
+  width: 15px;
+  height: 15px;
+}

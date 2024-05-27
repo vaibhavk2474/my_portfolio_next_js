@@ -29,6 +29,8 @@
   padding: 0.5rem;
   border-radius: 50%;
   overflow: hidden;
+
+  transition: transform 0.5s ease-in-out;
 }
 
 .profile_img_box .profile_img {
@@ -38,6 +40,13 @@
   border: 5px solid transparent; */
   border-radius: 50%;
 
-  height: 40rem;
-  width: 40rem;
+  height: 38rem;
+  width: 38rem;
+}
+
+.profile_img_box:hover .profile_img {
+  transform: scale(1);
+}
+.profile_img_box:hover {
+  transform: scale(1.1); /* Scales the image up on hover */
 }

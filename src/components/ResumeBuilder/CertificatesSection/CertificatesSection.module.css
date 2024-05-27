@@ -1,0 +1,21 @@
+/* certificates */
+
+.title_heading {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: rgba(49, 60, 78, 1);
+}
+.certificate_box {
+  margin-top: 3.5rem;
+}
+.certificate_list li {
+  color: rgba(0, 0, 0, 1);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+
+  margin-top: 0.5rem;
+}
