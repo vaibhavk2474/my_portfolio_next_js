@@ -36,5 +36,8 @@ yarn-error.log*
 next-env.d.ts
 
 
+server/node_modules
+
+
 # no need to push files
 HowToDo.md
