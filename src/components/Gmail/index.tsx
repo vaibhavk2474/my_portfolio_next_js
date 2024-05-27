@@ -6,8 +6,18 @@ import { CircularProgress } from "@mui/material";
 
 const END_POINT = process.env.NEXT_PUBLIC_API_END_POINT;
 
+interface Email {
+  id: number;
+  toEmail: string;
+}
+
+interface ApiState<T> {
+  isLoading: boolean;
+  error: Error | null;
+  data: T | null;
+}
 function GmailBox() {
-  const [apiState, setApiState] = useState({
+  const [apiState, setApiState] = useState<ApiState<any>>({
     isLoading: false,
     error: null,
     data: null,
@@ -17,7 +27,7 @@ function GmailBox() {
   const [toEmail, setToEmail] = useState("");
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
-  const [toEmailList, setToEmailList] = useState([]);
+  const [toEmailList, setToEmailList] = useState<Email[]>([]);
 
   const handleAddEmail = () => {
     if (!toEmail) {
@@ -32,7 +42,7 @@ function GmailBox() {
     setToEmailList([emailObj, ...toEmailList]);
   };
 
-  const handleDeleteEmail = (id) => {
+  const handleDeleteEmail = (id: any) => {
     setToEmailList(toEmailList.filter((c) => c.id !== id));
   };
   const handleSubmit = async () => {
@@ -73,7 +83,7 @@ function GmailBox() {
       setApiState((preState) => ({
         ...preState,
         isLoading: false,
-        error,
+        error: error instanceof Error ? error : new Error(String(error)),
       }));
     }
   };
@@ -163,7 +173,7 @@ function GmailBox() {
         <div className={styles.submit_box}>
           <button
             className="btn"
-            onClick={apiState.isLoading ? null : handleSubmit}
+            onClick={apiState.isLoading ? undefined : handleSubmit}
           >
             Send{" "}
             {apiState.isLoading && (

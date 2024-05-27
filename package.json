@@ -15,7 +15,6 @@
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.17",
     "framer-motion": "^11.2.6",
-    "html-pdf": "^3.0.1",
     "html2canvas": "^1.4.1",
     "i": "^0.3.7",
     "jspdf": "^2.5.1",

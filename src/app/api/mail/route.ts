@@ -42,7 +42,9 @@ export async function POST(request: Request, res: Response) {
   } catch (error) {
     console.log("errror", error);
 
-    const obj = { msg: error.message, };
+
+
+    const obj = { msg: (error as Error).message };
 
     const blob = new Blob([JSON.stringify(obj, null, 2)], {
       type: "application/json",

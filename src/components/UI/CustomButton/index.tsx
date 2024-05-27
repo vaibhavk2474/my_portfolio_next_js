@@ -1,12 +1,17 @@
 import React from "react";
 import styles from "./CustomButton.module.css";
 
+interface CustomButtonProps {
+  type?: "button" | "reset" | "submit" | undefined;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  children?: React.ReactNode;
+}
 function CustomButton({
   type = "button",
-  onClick = null,
+  onClick = undefined,
   children = "custom Button",
   ...props
-}) {
+}: CustomButtonProps) {
   return (
     <button
       type={type}
