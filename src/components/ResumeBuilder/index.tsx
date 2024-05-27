@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 import styles from "./resume-builder.module.css";
 import { useReactToPrint } from "react-to-print";
 import "./resume_page_print.css";
-import CustomButton from "../UI/CustomHeadingWithSubheading/CustomButton";
 
 import Resume_heading from "./Resume_heading/Resume_heading";
 import Resume_contact_info from "./Resume_contact_info/Resume_contact_info";
@@ -14,6 +13,7 @@ import ProjectsSection from "./ProjectsSection/ProjectsSection";
 import CertificatesSection from "./CertificatesSection/CertificatesSection";
 import LanguageSection from "./LanguageSection/LanguageSection";
 import InterestsSection from "./InterestsSection/InterestsSection";
+import CustomButton from "../UI/CustomButton";
 
 function ResumeBuilder() {
   let docToPrint = useRef(null);
