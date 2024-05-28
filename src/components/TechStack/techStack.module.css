@@ -50,3 +50,9 @@
 .icon:hover img {
   transform: scale(1.2);
 }
+
+@media (max-width: 425px) {
+  .tech_list {
+    justify-content: center;
+  }
+}

@@ -98,3 +98,13 @@ body {
     text-wrap: balance;
   }
 }
+
+@media (max-width: 425px) {
+  body {
+    background-color: rgb(var(--color-main));
+
+    width: calc(100vw - 2rem * 2);
+    margin: auto;
+    font-size: 1.6rem;
+  }
+}

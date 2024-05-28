@@ -50,3 +50,40 @@
 .profile_img_box:hover {
   transform: scale(1.1); /* Scales the image up on hover */
 }
+
+@media (max-width: 425px) {
+  .home {
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 10rem 0;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    color: #42446e;
+
+    width: 100%;
+  }
+
+  .profile_img_box {
+    margin-top: 2rem;
+  }
+
+  .profile_img_box .profile_img {
+    /* E70FAA */
+    /* border-image: linear-gradient(to right, #00c0fd, #e70faa) 1;
+    border-radius: 50%;
+    border: 5px solid transparent; */
+    border-radius: 50%;
+
+    height: 20rem;
+    width: 20rem;
+
+    /* margin-top: 2rem; */
+  }
+}

@@ -149,3 +149,21 @@
 
   cursor: pointer;
 }
+
+@media (max-width: 425px) {
+  .mail_box h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  .mail_box h5 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+
+  .mail_box {
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+  }
+}

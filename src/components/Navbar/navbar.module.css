@@ -62,3 +62,9 @@
 .social_list_item .download:hover svg {
   fill: #fff;
 }
+
+@media (max-width: 425px) {
+  .menu {
+    display: none;
+  }
+}

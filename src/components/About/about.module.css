@@ -33,3 +33,30 @@
   color: var(--color-dark-content);
   text-align: justify;
 }
+
+@media (max-width: 425px) {
+  .about_content {
+    flex-direction: column;
+  }
+
+  .left {
+    min-height: 15rem;
+    min-width: 15rem;
+    height: 15rem;
+    width: 15rem;
+
+    font-size: 1.4rem;
+
+    margin-bottom: 1.4rem;
+  }
+  .about_me {
+    color: var(--color-dark-content);
+    text-align: justify;
+
+    font-size: 1.4rem;
+  }
+
+  .about_content {
+    margin-top: 2rem;
+  }
+}

@@ -34,3 +34,12 @@
   color: var(--color-dark-content);
   padding: 2rem 0;
 }
+
+@media (max-width: 425px) {
+  .box_1 {
+    display: none;
+  }
+  .box_2 {
+    border-top: 1px solid var(--color-dark-content);
+  }
+}

@@ -84,3 +84,56 @@
   padding: 0.5rem 0.8rem;
   border-radius: 10px;
 }
+
+@media (max-width: 425px) {
+  .contentBox {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 3rem;
+
+    color: var(--color-dark-content);
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+  .part_1 .t1 {
+    font-size: 1.5rem;
+  }
+  .part_1 .t2 {
+    font-size: 0.8rem;
+  }
+
+  .part_2 .t1 {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .part_2 .t2 {
+    font-size: 0.8rem;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .part_2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .location_name {
+    margin-right: 0rem;
+  }
+
+  /* work experience */
+
+  .workExperienceDetails {
+    margin-left: unset;
+
+    margin-top: 2rem;
+
+    /* border: 1px solid red; */
+  }
+}
