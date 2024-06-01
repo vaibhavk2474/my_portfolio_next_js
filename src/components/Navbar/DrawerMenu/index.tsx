@@ -16,6 +16,7 @@ import Link from "next/link";
 import { MENU_LINKS } from "@/constants";
 import DownloadIcon from "@/icons/DownloadIcon";
 import ThemeSwitch from "../ThemeSwitch";
+import ResumeDownloadLinkBtn from "@/components/UI/ResumeDownloadLink";
 
 const CustomDiv = styled("div")({
   "@media (min-width:601px)": {
@@ -41,25 +42,6 @@ const CustomList = styled(List)({
 
 const DownloadBtnCustom = styled(Box)({
   margin: "1rem 0.5rem",
-
-  "& .download": {
-    border: "1px solid var(--color-dark-content)",
-    borderRadius: "5px",
-    padding: "0.2rem 0.5rem",
-
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-
-    transition: "all ease 0.5s",
-  },
-  "& .download:hover": {
-    background: "var(--color-dark-content)",
-    color: "#fff",
-  },
-  "& .download:hover svg": {
-    fill: "#fff",
-  },
 });
 
 type Anchor = "top" | "left" | "bottom" | "right";
@@ -113,14 +95,7 @@ export default function DrawerMenu() {
       </Box>
 
       <DownloadBtnCustom>
-        <Link
-          className={"download"}
-          href="/pdfs/Vaibhav Kumar updated Resume.pdf"
-          target="_blank"
-          download
-        >
-          Resume
-        </Link>
+        <ResumeDownloadLinkBtn />
       </DownloadBtnCustom>
     </Box>
   );
