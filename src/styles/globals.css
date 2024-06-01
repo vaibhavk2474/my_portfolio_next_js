@@ -59,6 +59,31 @@
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
+    --color-main: 255, 255, 255;
+    --color-primary: 0, 0, 0;
+
+    --color-white: 255, 255, 255;
+    --color-black: 0, 0, 0;
+
+    --color-solid-heading: #42446e;
+    --color-dark-content: #666666;
+    --color-light-content: #a7a7a7;
+
+    --color-success: #d7ffe0;
+    --color-success-text: #018c0f;
+
+    --color-heading: #42446e;
+
+    --color-tech-box: 97 219 251/1;
+    --color-contact-heading: #1e0e62;
+
+    --color-track: #aab4be;
+    --color-thumb: #001e3c;
+  }
+  :root .dark {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
     --color-main: 0, 0, 0;
     --color-primary: 255, 255, 255;
 
@@ -80,7 +105,7 @@
 
 /* 
   calculation :-
-  
+
   100% = 1rem  = 16px
   1%  = 1/100 = 16/100
 

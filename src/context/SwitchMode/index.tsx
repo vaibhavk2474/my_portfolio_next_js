@@ -1,4 +1,5 @@
-import React, { ReactNode, useState } from "react";
+import usePreferredColorScheme from "@/hooks/usePreferredColorScheme";
+import React, { ReactNode, useEffect, useState } from "react";
 
 interface SwitchModeContextType {
   mode: string;
@@ -19,8 +20,15 @@ function SwitchModeContextProvider({
 }: SwitchModeContextProviderProps) {
   const [mode, setMode] = useState("light");
 
+  const userPreferredColorScheme = usePreferredColorScheme();
+
   const toggleMode = () =>
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+
+  useEffect(() => {
+    setMode(userPreferredColorScheme);
+  }, [userPreferredColorScheme]);
+
   return (
     <SwitchModeContext.Provider
       value={{
