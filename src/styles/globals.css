@@ -54,16 +54,33 @@
 
   --color-thumb: #003892;
 }
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
     --color-main: 0, 0, 0;
+    --color-primary: 255, 255, 255;
+
+    --color-white: 255, 255, 255;
+    --color-black: 0, 0, 0;
+
+    --color-dark-content: #ffffff;
+    --color-heading: #ffffff;
+    --color-solid-heading: #7a7ff3;
+
+    --color-tech-box: 255, 255, 255;
+    --color-contact-heading: #ffffff;
+
+    --color-track: #8796a5;
+
+    --color-thumb: #003892;
   }
-} */
+}
 
 /* 
+  calculation :-
+  
   100% = 1rem  = 16px
   1%  = 1/100 = 16/100
 

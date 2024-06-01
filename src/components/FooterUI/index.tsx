@@ -1,12 +1,10 @@
 import React from "react";
 import style from "./footer.module.css";
-import Link from "next/link";
 import GithubIcon from "@/icons/GithubIcon";
-import TwitterIcon from "@/icons/TwitterIcon";
 import LinkdinIcon from "@/icons/LinkdinIcon";
-import Image from "next/image";
 import LogoImage from "../UI/LogoImage";
 import { GITHUB_LINK, LINKDIN_LINK } from "@/constants";
+import { Mail as MailIcon, Phone as PhoneIcon } from "@mui/icons-material";
 
 function FooterUI() {
   return (
@@ -18,11 +16,13 @@ function FooterUI() {
         <div className={style.menu}>
           <ul className={style.list}>
             <li className={style.list_item}>
-              <a href={"tel:+91 8094270183"}>+91 8094270183</a>
+              <a href={"tel:+91 8094270183"}>
+                <PhoneIcon /> +91 8094270183
+              </a>
             </li>
-            <li className={style.list_item}>
+            <li className={`${style.list_item} ${style.mail_list_item}`}>
               <a href={"mailto:vaibhavk2474@gmail.com"}>
-                vaibhavk2474@gmail.com
+                <MailIcon /> vaibhavk2474@gmail.com
               </a>
             </li>
           </ul>

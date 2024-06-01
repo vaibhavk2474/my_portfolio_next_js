@@ -39,9 +39,24 @@
 
 @media (max-width: 600px) {
   .box_1 {
+    /* display: none; */
+    padding: 1rem 0;
+  }
+  .mail_list_item,
+  .logo {
     display: none;
+  }
+  .menu {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 0.5rem;
   }
   .box_2 {
     border-top: 1px solid var(--color-dark-content);
+  }
+
+  .social_list svg {
+    width: 20px;
+    height: 20px;
   }
 }
