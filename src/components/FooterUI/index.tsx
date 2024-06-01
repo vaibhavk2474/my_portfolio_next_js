@@ -6,6 +6,7 @@ import TwitterIcon from "@/icons/TwitterIcon";
 import LinkdinIcon from "@/icons/LinkdinIcon";
 import Image from "next/image";
 import LogoImage from "../UI/LogoImage";
+import { GITHUB_LINK, LINKDIN_LINK } from "@/constants";
 
 function FooterUI() {
   return (
@@ -27,13 +28,13 @@ function FooterUI() {
           </ul>
           <ul className={style.social_list}>
             <li className={style.social_list_item}>
-              <a href="https://github.com/vaibhavk2474" target="_blank">
+              <a href={GITHUB_LINK} target="_blank">
                 <GithubIcon />
               </a>
             </li>
 
             <li className={style.social_list_item}>
-              <a href="https://linkdin.com/vaibhavk2474" target="_blank">
+              <a href={LINKDIN_LINK} target="_blank">
                 <LinkdinIcon />
               </a>
             </li>

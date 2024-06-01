@@ -24,6 +24,10 @@ const tech_stack_list = [
     img: "/NextJs.svg",
   },
   {
+    name: "TypeScript",
+    img: "/typescript.svg",
+  },
+  {
     name: "CSS3",
     img: "/css_logo.svg",
   },
@@ -41,6 +45,10 @@ const tech_stack_list = [
   {
     name: "SASS",
     img: "/logos_sass.svg",
+  },
+  {
+    name: "Tailwind",
+    img: "/tailwindcss.png",
   },
 
   {

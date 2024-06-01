@@ -24,3 +24,6 @@ export const MENU_LINKS = [
     link: "#contact",
   },
 ];
+
+export const GITHUB_LINK = "https://github.com/vaibhavk2474";
+export const LINKDIN_LINK = "https://www.linkedin.com/in/vaibhav-k-6a90851a7";

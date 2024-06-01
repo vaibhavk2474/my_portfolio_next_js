@@ -14,7 +14,7 @@ const PROJECTS_LIST = [
     scratch, managing nfts collections, wallet and integrate blockchain
     APIs and nodejs Backend APIs, individually`,
     projectTechList: ["React", "NextJs", "Redux", "Material UI"],
-    projectViewLink: "",
+    projectViewLink: "https://www.cardanoracers.com/",
   },
   {
     projectName: "Likes.io",
@@ -22,7 +22,7 @@ const PROJECTS_LIST = [
     their presence on various social media platforms mainly instagram
     Worked on the whole project from scratch, individually`,
     projectTechList: ["React", "NextJs", "Redux", "JavaScript", "Material UI"],
-    projectViewLink: "",
+    projectViewLink: "https://www.likes.io/",
   },
   {
     projectName: "Enverx",
@@ -55,7 +55,7 @@ function Projects() {
               <div className={styles.list_item}>
                 <div className={styles.inner_box}>
                   <div className={styles.project_name}>
-                    <a href="https://redux-toolkit.js.org/" target="_blank">
+                    <a href={cItem.projectViewLink} target="_blank">
                       {cItem.projectName}
                     </a>
                   </div>
@@ -70,7 +70,7 @@ function Projects() {
                     ))}
                   </div>
                   <a
-                    href="https://redux-toolkit.js.org/"
+                    href={cItem.projectViewLink}
                     target="_blank"
                     className={styles.project_view}
                   >

@@ -102,7 +102,7 @@ function ContactUs() {
         />
 
         <div className={styles.mail_box}>
-          <h3>Please mail me directly to this email</h3>
+          <h3>Please send mail directly to this email</h3>
           <h5 className={`colored`}>
             <a href="mailto:vaibhavk2474@gmail.com">vaibhavk2474@gmail.com</a>
           </h5>

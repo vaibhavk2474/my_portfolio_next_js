@@ -9,7 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import DownloadIcon from "@/icons/DownloadIcon";
 import DrawerMenu from "./DrawerMenu";
-import { MENU_LINKS } from "@/constants";
+import { GITHUB_LINK, LINKDIN_LINK, MENU_LINKS } from "@/constants";
 import ThemeSwitch from "./ThemeSwitch";
 import { SwitchModeContext } from "@/context/SwitchMode";
 import LogoImage from "../UI/LogoImage";
@@ -38,19 +38,19 @@ function Navbar() {
           </li>
 
           <li className={style.social_list_item}>
-            <a href="https://github.com/vaibhavk2474" target="_blank">
+            <a href={GITHUB_LINK} target="_blank">
               <GithubIcon />
             </a>
           </li>
           <li className={style.social_list_item}>
-            <a href="https://linkdin.com/vaibhavk2474" target="_blank">
+            <a href={LINKDIN_LINK} target="_blank">
               <LinkdinIcon />
             </a>
           </li>
           <li className={style.social_list_item}>
             <Link
               className={style.download}
-              href="/pdfs/Vaibhav Kumar updated Resume.pdf"
+              href="/pdfs/Vaibhav-kumar-resume.pdf"
               target="_blank"
               download
             >
