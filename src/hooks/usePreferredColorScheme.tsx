@@ -11,7 +11,7 @@ function usePreferredColorScheme() {
     return "light";
   };
 
-  const [colorScheme, setColorScheme] = useState<string>(getPreferredScheme());
+  const [colorScheme, setColorScheme] = useState<string>("");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -19,6 +19,7 @@ function usePreferredColorScheme() {
       setColorScheme(event.matches ? "dark" : "light");
     };
 
+    setColorScheme(getPreferredScheme());
     mediaQuery.addEventListener("change", handleChange);
     return () => {
       mediaQuery.removeEventListener("change", handleChange);
