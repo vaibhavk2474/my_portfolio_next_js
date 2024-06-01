@@ -6,7 +6,7 @@
   margin-top: 3rem;
 
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 
   flex-wrap: wrap;
@@ -26,6 +26,8 @@
 .icon {
   border: 1px solid #e3e3e3;
   border-radius: 10px 0 10px 0;
+
+  background-color: rgb(var(--color-white));
 
   /* width: 100%;
   height: 100%; */
@@ -51,7 +53,7 @@
   transform: scale(1.2);
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .tech_list {
     justify-content: center;
   }

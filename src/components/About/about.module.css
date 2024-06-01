@@ -34,7 +34,7 @@
   text-align: justify;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .about_content {
     flex-direction: column;
   }
@@ -44,6 +44,8 @@
     min-width: 15rem;
     height: 15rem;
     width: 15rem;
+
+    margin-right: unset;
 
     font-size: 1.4rem;
 

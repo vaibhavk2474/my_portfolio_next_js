@@ -85,7 +85,7 @@
   border-radius: 10px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .contentBox {
     display: flex;
     flex-direction: column;

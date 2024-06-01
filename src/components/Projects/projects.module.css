@@ -22,14 +22,15 @@
   padding-bottom: 5rem;
   position: relative;
   overflow: hidden;
-  /* background-color: #e3e3e3; */
+
+  background-color: rgb(var(--color-white));
 
   width: 35rem;
   height: 35rem;
 }
 
 .list_item .project_name {
-  color: var(--color-black);
+  color: rgb(var(--color-black));
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: 600;
@@ -54,8 +55,11 @@
   border-radius: 10px 0 10px 0;
   margin-right: 1rem;
   margin-bottom: 1rem;
+
   background-color: rgb(97 219 251/1);
-  color: #fff;
+  color: rgb(var(--color-primary));
+  /* background-color: rgb(var(97 219 251/1);
+  color: rgb(var(--color-main)); */
   font-size: 1.4rem;
 }
 
@@ -70,7 +74,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .inner_box {
     border: 1px solid #e3e3e3;
     border-radius: 10px;

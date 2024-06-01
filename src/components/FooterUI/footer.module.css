@@ -20,7 +20,7 @@
 
 .list_item {
   margin-right: 3rem;
-  color: var(--color-solid-heading);
+  color: rgb(var(--color-primary));
   font-size: 1.5rem;
 }
 
@@ -28,14 +28,16 @@
   margin-left: 1rem;
   font-size: 1.5rem;
 }
-
+.social_list_item svg {
+  fill: rgb(var(--color-primary));
+}
 .box_2 {
   text-align: center;
   color: var(--color-dark-content);
   padding: 2rem 0;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .box_1 {
     display: none;
   }

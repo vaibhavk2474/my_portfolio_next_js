@@ -19,6 +19,12 @@
 .logo {
   cursor: pointer;
 }
+
+.logo img {
+  cursor: pointer;
+  min-width: 60px;
+  min-height: 20px;
+}
 .list .list_item {
   padding: 0 1rem;
   cursor: pointer;
@@ -42,6 +48,8 @@
 .social_list .social_list_item svg {
   height: 2rem;
   width: 2rem;
+
+  fill: rgb(var(--color-primary));
 }
 
 .social_list_item .download {
@@ -63,7 +71,7 @@
   fill: #fff;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .menu {
     display: none;
   }

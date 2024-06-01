@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { poppins } from "@/fonts";
-import Navbar from "@/components/Navbar";
-import FooterUI from "@/components/FooterUI";
+import OuterLayout from "./OuterLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className + " nodark"}>
-        <Navbar />
-        {children}
-        <FooterUI />
-      </body>
+      <OuterLayout poppins={poppins}>{children}</OuterLayout>
     </html>
   );
 }

@@ -15,9 +15,16 @@ import { styled } from "@mui/material";
 import Link from "next/link";
 import { MENU_LINKS } from "@/constants";
 import DownloadIcon from "@/icons/DownloadIcon";
+import ThemeSwitch from "../ThemeSwitch";
+
+const CustomDiv = styled("div")({
+  "@media (min-width:601px)": {
+    display: "none",
+  },
+});
 
 const MenuIconCustom = styled(MenuIcon)({
-  color: "rgb(0,0,0)",
+  color: "rgb(var(--color-primary))",
   width: "3rem",
   height: "3rem",
 });
@@ -102,6 +109,7 @@ export default function DrawerMenu() {
           ))}
         </CustomList>
         <Divider />
+        <ThemeSwitch />
       </Box>
 
       <DownloadBtnCustom>
@@ -118,7 +126,7 @@ export default function DrawerMenu() {
   );
 
   return (
-    <div>
+    <CustomDiv>
       {(["right"] as const).map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
@@ -133,6 +141,6 @@ export default function DrawerMenu() {
           </Drawer>
         </React.Fragment>
       ))}
-    </div>
+    </CustomDiv>
   );
 }

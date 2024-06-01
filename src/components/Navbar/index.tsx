@@ -10,16 +10,19 @@ import Image from "next/image";
 import DownloadIcon from "@/icons/DownloadIcon";
 import DrawerMenu from "./DrawerMenu";
 import { MENU_LINKS } from "@/constants";
+import ThemeSwitch from "./ThemeSwitch";
+import { SwitchModeContext } from "@/context/SwitchMode";
+import LogoImage from "../UI/LogoImage";
 // import LogoIcon from "@/icons/LogoIcon";
 
 function Navbar() {
+  const themeContext = React.useContext(SwitchModeContext);
+
   return (
     <header className={style.nav + " "}>
       <div className={`${style.logo} ${style.left}`}>
-        <Link href={"/"}>
-          <Image src={"/images/logo.png"} alt="" width={100} height={100} />
-        </Link>
         {/* <LogoIcon /> */}
+        <LogoImage />
       </div>
       <div className={style.menu}>
         <ul className={style.list}>
@@ -30,6 +33,10 @@ function Navbar() {
           ))}
         </ul>
         <ul className={style.social_list}>
+          <li className={style.social_list_item}>
+            <ThemeSwitch />
+          </li>
+
           <li className={style.social_list_item}>
             <a href="https://github.com/vaibhavk2474" target="_blank">
               <GithubIcon />

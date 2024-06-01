@@ -1,5 +1,5 @@
 .container {
-  margin: 10rem 0 0 0;
+  margin: 10rem 0 10rem 0;
 }
 
 .contact_box {
@@ -133,7 +133,7 @@
 }
 
 .mail_box h3 {
-  color: #1e0e62;
+  color: var(--color-contact-heading);
 
   font-size: 4rem;
   line-height: 4.5rem;
@@ -150,7 +150,10 @@
   cursor: pointer;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
+  .container {
+    margin: 10rem 0 10rem 0;
+  }
   .mail_box h3 {
     font-size: 2rem;
     line-height: 2rem;
