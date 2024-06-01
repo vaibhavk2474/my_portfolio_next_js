@@ -12,7 +12,7 @@ function EyeIcon() {
       stroke="#000"
       strokeLinecap="round"
       strokeLinejoin="round"
-      stroke-width="2"
+      strokeWidth="2"
     >
       <title>Group 116-svg</title>
 

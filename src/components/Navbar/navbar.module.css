@@ -20,11 +20,6 @@
   cursor: pointer;
 }
 
-.logo img {
-  cursor: pointer;
-  min-width: 60px;
-  min-height: 20px;
-}
 .list .list_item {
   padding: 0 1rem;
   cursor: pointer;
@@ -52,8 +47,17 @@
   fill: rgb(var(--color-primary));
 }
 
+@media (max-width: 1000px) {
+  .social_links {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .menu {
     display: none;
+  }
+  .social_links {
+    display: unset;
   }
 }

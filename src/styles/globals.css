@@ -169,8 +169,7 @@ body {
 }
 @media (max-width: 900px) {
   html {
-    font-size: 50.5%;
-
+    font-size: 45%;
     scroll-behavior: smooth;
   }
   body {

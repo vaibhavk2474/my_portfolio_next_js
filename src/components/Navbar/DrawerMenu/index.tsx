@@ -32,6 +32,10 @@ const MenuIconCustom = styled(MenuIcon)({
 const CustomListItem = styled(ListItem)({
   padding: "1rem 2rem",
 
+  "& a": {
+    width: "100%",
+  },
+
   "&:hover": {
     background: "#e3e3e3",
   },

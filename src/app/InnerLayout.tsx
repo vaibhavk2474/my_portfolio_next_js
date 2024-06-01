@@ -2,7 +2,7 @@
 
 import FooterUI from "@/components/FooterUI";
 import Navbar from "@/components/Navbar";
-import { SwitchModeContext } from "@/context/SwitchMode";
+import { ThemeContext } from "@/context/ThemeContext";
 import React, { useContext } from "react";
 
 function InnerLayout({
@@ -12,10 +12,10 @@ function InnerLayout({
   poppins: any;
   children: React.ReactNode;
 }) {
-  const switchModeContext = useContext(SwitchModeContext);
+  const theme = useContext(ThemeContext);
 
   return (
-    <body className={poppins.className + " " + `${switchModeContext?.mode}`}>
+    <body className={poppins.className + " " + `${theme?.mode}`}>
       <Navbar />
       {children}
       <FooterUI />

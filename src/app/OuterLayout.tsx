@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import SwitchModeContextProvider from "@/context/SwitchMode";
 import InnerLayout from "./InnerLayout";
+import ThemeContextProvider from "@/context/ThemeContext";
 
 function OuterLayout({
   poppins,
@@ -12,9 +12,9 @@ function OuterLayout({
   children: React.ReactNode;
 }) {
   return (
-    <SwitchModeContextProvider>
+    <ThemeContextProvider>
       <InnerLayout poppins={poppins}>{children}</InnerLayout>
-    </SwitchModeContextProvider>
+    </ThemeContextProvider>
   );
 }
 

@@ -65,9 +65,9 @@ function Services() {
                       {/* <LinkdinIcon /> */}
                     </div>
                     <div className={styles.service_name}>
-                      <a href="https://redux-toolkit.js.org/" target="_blank">
-                        {cItem.serviceName}
-                      </a>
+                      {/* <a href="https://redux-toolkit.js.org/" target="_blank"> */}
+                      {cItem.serviceName}
+                      {/* </a> */}
                     </div>
                     <p className={styles.service_summary}>
                       {cItem.serviceSummary}

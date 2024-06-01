@@ -1,23 +1,21 @@
-import usePreferredColorScheme from "@/hooks/usePreferredColorScheme";
 import React, { ReactNode, useEffect, useState } from "react";
+import usePreferredColorScheme from "@/hooks/usePreferredColorScheme";
 
-interface SwitchModeContextType {
+interface ThemeContextType {
   mode: string;
   setMode: React.Dispatch<React.SetStateAction<string>>;
   toggleMode: () => void;
 }
 
-export const SwitchModeContext = React.createContext<
-  SwitchModeContextType | undefined
->(undefined);
+export const ThemeContext = React.createContext<ThemeContextType | undefined>(
+  undefined
+);
 
-interface SwitchModeContextProviderProps {
+interface ThemeContextProviderProps {
   children: ReactNode;
 }
 
-function SwitchModeContextProvider({
-  children,
-}: SwitchModeContextProviderProps) {
+function ThemeContextProvider({ children }: ThemeContextProviderProps) {
   const [mode, setMode] = useState("light");
 
   const userPreferredColorScheme = usePreferredColorScheme();
@@ -30,7 +28,7 @@ function SwitchModeContextProvider({
   }, [userPreferredColorScheme]);
 
   return (
-    <SwitchModeContext.Provider
+    <ThemeContext.Provider
       value={{
         mode,
         setMode,
@@ -38,8 +36,8 @@ function SwitchModeContextProvider({
       }}
     >
       {children}
-    </SwitchModeContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 
-export default SwitchModeContextProvider;
+export default ThemeContextProvider;

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
 function usePreferredColorScheme() {
+  const [colorScheme, setColorScheme] = useState<string>("");
+
   const getPreferredScheme = () => {
     if (
       window.matchMedia &&
@@ -10,8 +12,6 @@ function usePreferredColorScheme() {
     }
     return "light";
   };
-
-  const [colorScheme, setColorScheme] = useState<string>("");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
