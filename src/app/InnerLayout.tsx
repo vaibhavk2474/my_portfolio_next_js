@@ -2,7 +2,7 @@
 
 import FooterUI from "@/components/FooterUI";
 import Navbar from "@/components/Navbar";
-import { ThemeContext } from "@/context/ThemeContext";
+import { ThemeContext } from "@/context/SwitchMode";
 import React, { useContext } from "react";
 
 function InnerLayout({

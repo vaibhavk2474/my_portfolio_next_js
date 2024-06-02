@@ -23,6 +23,30 @@ function ResumeBuilder() {
     documentTitle: `printed-component`,
     // documentTitle: `printed-component-${Math.random() * 1000}`,
     onAfterPrint: () => alert("Print success!"),
+
+    // pageStyle: `
+    //   @media print {
+    //     @page {
+    //       size: auto; /* Set page size to A4, can be letter, legal, etc. */
+    //       margin: 0; /* Adjust margins as needed */
+
+    //       size: 24cm 24cm;
+
+    //     }
+
+    //     body { margin: 0; padding: 0; }
+
+    //      body { -webkit-print-color-adjust: exact; }
+
+    //      .printable-content {
+    //       margin:0;
+    //       padding:0;
+    //       width: 24cm;
+    //       height: 24cm;
+    //       box-sizing: border-box;
+    //       page-break-inside: avoid;
+    //     }
+    //   }`,
   });
 
   return (
@@ -34,10 +58,12 @@ function ResumeBuilder() {
         <div
           ref={docToPrint}
           id="divToPrint"
-          className={styles.resume_page}
+          className={`${styles.resume_page} printable-content`}
           // style={{
-          //   width: "1000px",
-          //   height: "800px",
+          //   width: "100%",
+          //   height: "auto",
+          //   padding: 0,
+          //   margin: 0,
           // }}
         >
           <Resume_heading />

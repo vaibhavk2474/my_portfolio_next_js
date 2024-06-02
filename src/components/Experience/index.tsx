@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./experience.module.css";
 import OfficeIcon from "@/icons/OfficeIcon";
 import LocationIcon from "@/icons/LocationIcon";
@@ -66,7 +66,6 @@ const WORK_EXPERIENCE_LIST = [
 ];
 
 function Experience() {
-  const scrollRef = useRef(null);
   return (
     <motion.div
       className="animated-content"

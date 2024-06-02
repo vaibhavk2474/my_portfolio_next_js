@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import styles from "./LogoImage.module.css";
-import { ThemeContext } from "@/context/ThemeContext";
+import { ThemeContext } from "@/context/SwitchMode";
 
 function LogoImage(
   {

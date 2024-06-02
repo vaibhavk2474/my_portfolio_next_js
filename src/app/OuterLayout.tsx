@@ -2,7 +2,7 @@
 
 import React from "react";
 import InnerLayout from "./InnerLayout";
-import ThemeContextProvider from "@/context/ThemeContext";
+import ThemeContextProvider from "@/context/SwitchMode";
 
 function OuterLayout({
   poppins,

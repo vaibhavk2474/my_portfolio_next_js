@@ -1,49 +1,23 @@
 @media print {
   @page {
-    size: A4; /* Set page size to A4, can be letter, legal, etc. */
+    size: auto; /* Set page size to A4, can be letter, legal, etc. */
     margin: 0; /* Adjust margins as needed */
 
-    size: 23.8cm 31.4cm;
+    size: 21cm 23.7cm;
   }
 
   body {
     margin: 0;
     padding: 0;
+    -webkit-print-color-adjust: exact;
   }
 
   .printable-content {
-    width: 21cm; /* A4 width */
-    height: 27.7cm; /* A4 height */
-
-    /* not working */
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
     box-sizing: border-box;
     page-break-inside: avoid;
   }
 }
-
-/* styles/print.css */
-
-/*
-
-@media print {
-    @page {
-      margin: 0; 
-    }
-  
-    body {
-      margin: 0;
-      padding: 0;
-    }
-  
-    .printable-content {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      transform: scale(1); 
-      transform-origin: top left;
-    }
-  }
-  
-  */
