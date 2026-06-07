@@ -4,7 +4,7 @@ import ResumePdf from "@/components/ResumeBuilder/ResumePdf";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import "@/styles/resume.css";
 
-function ResumeBuilderPage({ ...rest }) {
+function ResumeBuilderPage() {
   return (
     <ReduxProvider>
       <div className="resume-container">
