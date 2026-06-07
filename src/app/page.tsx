@@ -7,15 +7,16 @@ import Services from "@/components/MainPage/Services";
 import ContactUs from "@/components/MainPage/ContactUs";
 
 export default function HomePage() {
-  return (
-    <main className="">
-      <Home />
-      <About />
-      <TechStack />
-      <Experience />
-      <Projects />
-      <Services />
-      <ContactUs />
-    </main>
-  );
+	console.log("testing");
+	return (
+		<main className="">
+			<Home />
+			<About />
+			<TechStack />
+			<Experience />
+			<Projects />
+			<Services />
+			<ContactUs />
+		</main>
+	);
 }
