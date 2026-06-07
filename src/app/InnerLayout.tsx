@@ -1,7 +1,7 @@
 "use client";
 
-import FooterUI from "@/components/FooterUI";
-import Navbar from "@/components/Navbar";
+import FooterUI from "@/components/Layout/FooterUI";
+import Navbar from "@/components/Layout/Navbar";
 import { ThemeContext } from "@/context/SwitchMode";
 import React, { useContext } from "react";
 

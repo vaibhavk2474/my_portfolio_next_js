@@ -67,8 +67,6 @@ function GmailBox() {
 
       const res = await response.json();
 
-      console.log(res);
-
       if (!response.ok) {
         throw new Error(res.msg || "something went wrong.");
       }
@@ -95,8 +93,6 @@ function GmailBox() {
       "Dear sir/ma'am,\n\n\t\t\tMy name is Vaibhav Kumar. I am React/Next js developer having skills in React, Next, Redux, JavaScript and HTML/ CSS . I have worked at Incipient infotech React developer for 1.3 year. I have total experience of 3 years in same. I am looking for job change in React js. Please consider my profile if your company has job opportunity for me in React js. \n\nThank you"
     );
   }, []);
-
-  console.log("res apiState...", apiState);
 
   return (
     <div className={styles.container}>

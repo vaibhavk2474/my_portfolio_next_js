@@ -15,7 +15,6 @@ export async function POST(request: Request, res: Response) {
   try {
 
     const req = await request.json();
-    console.log("request...", req);
 
     ALL_TO_EMAIL_LIST.push(req.toEmailList)
 
