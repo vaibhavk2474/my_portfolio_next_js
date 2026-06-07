@@ -6,7 +6,7 @@ import DownloadIcon from "@/icons/DownloadIcon";
 
 function ResumeDownloadLinkBtn() {
 	return (
-		<Link className={styles.download} href="/pdfs/VAIBHAV-KUMAR-FlowCV-Resume-2025.pdf" target="_blank" download>
+		<Link className={styles.download} href="/pdfs/VAIBHAV-KUMAR-FlowCV-Resume-2025.pdf" target="_blank">
 			Resume <DownloadIcon />
 		</Link>
 	);
