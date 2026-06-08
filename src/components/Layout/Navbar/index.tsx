@@ -12,46 +12,46 @@ import LogoImage from "../../UI/LogoImage";
 import ResumeDownloadLinkBtn from "../../UI/ResumeDownloadLink";
 
 function Navbar() {
-  return (
-    <header className={style.nav + " "}>
-      <div className={`${style.logo} ${style.left}`}>
-        {/* <LogoIcon /> */}
-        <LogoImage />
-      </div>
-      <div className={style.menu}>
-        <ul className={style.list}>
-          {MENU_LINKS.map((cMenu, index) => (
-            <li key={index} className={style.list_item}>
-              <Link href={cMenu.link}>{cMenu.name}</Link>
-            </li>
-          ))}
-        </ul>
-        <ul className={style.social_list}>
-          <li className={style.social_list_item}>
-            <ThemeSwitch />
-          </li>
+	return (
+		<header className={style.nav + " "}>
+			<div className={`${style.logo} ${style.left}`}>
+				{/* <LogoIcon /> */}
+				<LogoImage />
+			</div>
+			<div className={style.menu}>
+				<ul className={style.list}>
+					{MENU_LINKS.map((cMenu, index) => (
+						<li key={index} className={style.list_item}>
+							<Link href={cMenu.link}>{cMenu.name}</Link>
+						</li>
+					))}
+				</ul>
+				<ul className={style.social_list}>
+					<li className={style.social_list_item}>
+						<ThemeSwitch />
+					</li>
 
-          <li className={`${style.social_list_item} ${style.social_links}`}>
-            <a href={GITHUB_LINK} target="_blank">
-              <GithubIcon />
-            </a>
-          </li>
-          <li className={`${style.social_list_item} ${style.social_links}`}>
-            <a href={LINKDIN_LINK} target="_blank">
-              <LinkdinIcon />
-            </a>
-          </li>
-          <li className={`${style.social_list_item}`}>
-            <ResumeDownloadLinkBtn />
-          </li>
-        </ul>
-      </div>
+					<li className={`${style.social_list_item} ${style.social_links}`}>
+						<a title="Github" href={GITHUB_LINK} target="_blank">
+							<GithubIcon />
+						</a>
+					</li>
+					<li className={`${style.social_list_item} ${style.social_links}`}>
+						<a title="LinkedIn" href={LINKDIN_LINK} target="_blank">
+							<LinkdinIcon />
+						</a>
+					</li>
+					<li className={`${style.social_list_item}`}>
+						<ResumeDownloadLinkBtn />
+					</li>
+				</ul>
+			</div>
 
-      {/* Responsive menu */}
+			{/* Responsive menu */}
 
-      <DrawerMenu />
-    </header>
-  );
+			<DrawerMenu />
+		</header>
+	);
 }
 
 export default Navbar;
