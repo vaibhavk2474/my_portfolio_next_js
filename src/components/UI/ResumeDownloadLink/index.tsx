@@ -7,7 +7,7 @@ import styles from "./ResumeDownloadLinkBtn.module.css";
 function ResumeDownloadLinkBtn() {
 	return (
 		<Link title="Download Resume" className={styles.download} href="/pdfs/VAIBHAV_KUMAR_FlowCV_Resume_2026-06-09.pdf" target="_blank">
-			Resume download
+			Resume
 		</Link>
 	);
 }
