@@ -17,8 +17,8 @@ function About() {
 						years of experiences
 					</div>
 					<div className={styles.about_me}>
-						I'm Vaibhav Kumar, a Software Developer with 4.5+ years of experience specializing in React.js and modern web development. I build fast, scalable, and user-centric applications
-						using React.js, Next.js, TypeScript, JavaScript, Node.js, Express.js, and MongoDB, with hands-on exposure to AWS and Salesforce.
+						I&apos;m Vaibhav Kumar, a Software Developer with 4.5+ years of experience specializing in React.js and modern web development. I build fast, scalable, and user-centric
+						applications using React.js, Next.js, TypeScript, JavaScript, Node.js, Express.js, and MongoDB, with hands-on exposure to AWS and Salesforce.
 						<br /> I enjoy transforming complex requirements into clean, intuitive user experiences while maintaining performance, accessibility, and code quality. Passionate about
 						learning and problem-solving, I continuously explore new technologies and best practices to build impactful digital products.
 					</div>
