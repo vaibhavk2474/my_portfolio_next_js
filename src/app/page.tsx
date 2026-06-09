@@ -11,7 +11,6 @@ export default function HomePage() {
 	console.log("testing");
 	return (
 		<main className="">
-			{/* testing */}
 			<Home />
 			<About />
 			<TechStack />
