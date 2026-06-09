@@ -56,9 +56,9 @@ function Projects() {
 
 				<div className={styles.list}>
 					{PROJECTS_LIST.map((cItem, index) => (
-						<>
+						<React.Fragment key={index}>
 							{cItem.isCommingSoon ? (
-								<motion.div whileHover={{ scale: 1.05 }} key={index}>
+								<motion.div whileHover={{ scale: 1.05 }}>
 									<div className={styles.list_item}>
 										<div className={styles.inner_box + " " + styles.over_box}>
 											<div className={styles.project_name}>
@@ -87,7 +87,7 @@ function Projects() {
 									</div>
 								</motion.div>
 							) : (
-								<motion.div whileHover={{ scale: 1.05 }} key={index}>
+								<motion.div whileHover={{ scale: 1.05 }}>
 									<div className={styles.list_item}>
 										<div className={styles.inner_box}>
 											<div className={styles.project_name}>
@@ -116,7 +116,7 @@ function Projects() {
 									</div>
 								</motion.div>
 							)}
-						</>
+						</React.Fragment>
 					))}
 				</div>
 			</section>

@@ -97,7 +97,7 @@ function TechStack() {
 					{tech_stack_list.map((cItem, index) => (
 						<div key={index} className={styles.tech_item}>
 							<div className={styles.icon}>
-								<Image src={`/icons${cItem.img}`} width={50} height={50} alt="react" />
+								<Image src={`/icons${cItem.img}`} width={50} height={50} alt={cItem.name} />
 							</div>
 							<div className={styles.tech_name}>{cItem.name}</div>
 						</div>

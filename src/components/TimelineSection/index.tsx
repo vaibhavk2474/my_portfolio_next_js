@@ -30,7 +30,7 @@ export default function TimelineSection({ mode, title, subtitle, items }: Timeli
 
 				<div className={styles.timeline + " " + styles.middleTimeline}>
 					{items.map((item, index) => (
-						<div key={item.id} className={styles.timelineItem + " " + styles.middleTimelineItem}>
+						<div key={"education-" + item.id} className={styles.timelineItem + " " + styles.middleTimelineItem}>
 							<div className={styles.dot + " " + styles.middleDot} />
 
 							{index !== items.length - 1 ? (

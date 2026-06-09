@@ -1,7 +1,9 @@
 import TimelineSection, { TimelineItem } from "@/components/TimelineSection";
 
 const experienceData: TimelineItem[] = [
+	// 54
 	{
+		//16
 		id: "1",
 		title: "Software Developer",
 		organization: "Qudasoft Pvt. Ltd.",
@@ -20,13 +22,14 @@ const experienceData: TimelineItem[] = [
 		skills: ["React", "Next.js", "Material UI", "AWS Amplify", "JavaScript", "Salesforce", "LWC", "Apex", "Node", "AWS S3"],
 	},
 	{
+		//16
 		id: "2",
 		title: "ReactJs Developer",
 		organization: "Incipient Infotecth",
 		url: "https://incipientinfo.tech",
 		location: "Ahmedabad, Gujrat",
 		startDate: "Jan 2023",
-		endDate: "June 2024",
+		endDate: "April 2024",
 		description: [
 			`Built and maintained custom web applications for global clients using React.js, 
     translating business requirements into scalable and user-friendly digital solutions.`,
@@ -36,13 +39,14 @@ const experienceData: TimelineItem[] = [
 		skills: ["React", "TypeScript", "Material UI", "Redux", "NextJs"],
 	},
 	{
+		//12
 		id: "3",
 		title: "ReactJs Developer",
 		organization: "SoluLab | Blockchain Development Company",
 		url: "https://www.solulab.com/",
 		location: "Ahmedabad, Gujrat",
-		startDate: "Oct 2021",
-		endDate: "Oct 2022",
+		startDate: "Nov 2021",
+		endDate: "Nov 2022",
 		description: [
 			`Working on frontend using React and Redux`,
 			`I use React functional based components using React Hooks.`,
@@ -50,6 +54,19 @@ const experienceData: TimelineItem[] = [
 			`Built user-friendly interfaces for blockchain-based applications, integrating wallet connectivity and decentralized workflows using React.js.`,
 		],
 		skills: ["React", "JavaScript", "Web3.js/Ethers.js", "MetaMask", "Redux", "Tailwind CSS", "Bootstrap", "Rest API"],
+	},
+	{
+		//10
+		id: "4",
+		title: "Web Developer",
+		organization: "Pepcoding",
+		location: "Noida, Uttar Pradesh",
+		startDate: "Feb 2021",
+		endDate: "Nov 2021",
+		description: [
+			`Worked on projects with web technologies like React, Redux, Nodejs,
+      NoSQL(Firebase).`,
+		],
 	},
 ];
 const educationData: TimelineItem[] = [
@@ -76,8 +93,8 @@ const educationData: TimelineItem[] = [
 		title: "Secondary Education (RBSE)",
 		organization: "GOVT. DARBAR SEN.SEC. SCHOOL",
 		location: "Sambhar Lake, Jaipur",
-		startDate: "july 2014",
-		endDate: "june 2015",
+		startDate: "july 2013",
+		endDate: "june 2014",
 		tag: "85.67%",
 	},
 ];
