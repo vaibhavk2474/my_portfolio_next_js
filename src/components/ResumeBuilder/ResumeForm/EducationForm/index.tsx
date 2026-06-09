@@ -192,7 +192,6 @@ const EducationData: React.FC<{
   };
 
   const shouldShow = isFocused == educationData.id;
-  // console.log("shouldShow", shouldShow);
 
   return (
     <div
