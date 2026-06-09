@@ -1,28 +1,32 @@
 export const MENU_LINKS = [
-  {
-    name: "Home",
-    link: "#home",
-  },
-  {
-    name: "About",
-    link: "#about",
-  },
-  {
-    name: "Experience",
-    link: "#experience",
-  },
-  {
-    name: "Services",
-    link: "#services",
-  },
-  {
-    name: "Projects",
-    link: "#projects",
-  },
-  {
-    name: "Contact",
-    link: "#contact",
-  },
+	{
+		name: "Home",
+		link: "#home",
+	},
+	{
+		name: "About",
+		link: "#about",
+	},
+	{
+		name: "Tech Stack",
+		link: "#tech-stack",
+	},
+	{
+		name: "Experience",
+		link: "#experience",
+	},
+	{
+		name: "Projects",
+		link: "#projects",
+	},
+	{
+		name: "Services",
+		link: "#services",
+	},
+	{
+		name: "Contact",
+		link: "#contact",
+	},
 ];
 
 export const GITHUB_LINK = "https://github.com/vaibhavk2474";

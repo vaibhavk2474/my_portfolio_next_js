@@ -83,7 +83,14 @@ const tech_stack_list = [
 
 function TechStack() {
 	return (
-		<motion.div className="animated-content" initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} viewport={{ once: true }}>
+		<motion.div
+			id="tech-stack"
+			className="animated-content"
+			initial={{ opacity: 0, y: 80 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 1, ease: "easeOut" }}
+			viewport={{ once: true }}
+		>
 			<section className={styles.tech}>
 				<CustomHeadingWithSubheading headingText="My Tech Stack" subHeadingText="Technologies & tools I’ve been working with recently" />
 				<div className={styles.tech_list}>

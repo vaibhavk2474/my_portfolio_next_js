@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import styles from "./ResumeDownloadLinkBtn.module.css";
-import DownloadIcon from "@/icons/DownloadIcon";
+// import DownloadIcon from "@/icons/DownloadIcon";
 
 function ResumeDownloadLinkBtn() {
 	return (
