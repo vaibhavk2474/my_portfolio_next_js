@@ -8,7 +8,6 @@ import Services from "@/components/MainPage/Services";
 import ContactUs from "@/components/MainPage/ContactUs";
 
 export default function HomePage() {
-	console.log("testing");
 	return (
 		<main className="">
 			<Home />

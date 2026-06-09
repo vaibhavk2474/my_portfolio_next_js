@@ -18,8 +18,6 @@ function Education_details() {
     (state) => state.educationReducer
   );
 
-  console.log("qualificationDataList...", qualificationDataList);
-
   const item: EducationType = { ...qualificationDataList[0] };
 
   return (
@@ -32,8 +30,6 @@ function Education_details() {
             const nCItem: EducationType = { ...cItem };
 
             if (Object.keys(nCItem).some((c) => !nCItem[c])) return null;
-
-            // console.log(Object.keys(cItem).some((c) => !cItem[c]));
 
             return (
               <div key={cItem.id} className={styles.education_list_item}>
