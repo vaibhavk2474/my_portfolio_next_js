@@ -13,7 +13,7 @@ function Home() {
 				My name is <br />
 				<span className={styles.colored}>Vaibhav Kumar</span> <br />I am{" "}
 				<span className={styles.colored}>
-					<ReactTyped strings={["ReactJs Developer", "NextJs Developer", "Frontend Developer", "Software Developer"]} typeSpeed={60} backSpeed={60} loop></ReactTyped>
+					<ReactTyped strings={["Software Engineer", "Frontend Developer", "ReactJs Developer", "NextJs Developer", ]} typeSpeed={60} backSpeed={60} loop></ReactTyped>
 				</span>
 			</h1>
 			<div className={styles.profile_img_box}>

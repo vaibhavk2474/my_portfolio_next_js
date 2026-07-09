@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./about.module.css";
 import CustomHeadingWithSubheading from "../../UI/CustomHeadingWithSubheading";
 import { motion } from "framer-motion";
+// import TagGroup from "@/components/UI/TagGroup";
 
 function About() {
 	return (
@@ -16,11 +17,20 @@ function About() {
 						4.5+ <br />
 						years of experiences
 					</div>
-					<div className={styles.about_me}>
-						I&apos;m Vaibhav Kumar, a Software Developer with 4.5+ years of experience specializing in React.js and modern web development. I build fast, scalable, and user-centric
-						applications using React.js, Next.js, TypeScript, JavaScript, Node.js, Express.js, and MongoDB, with hands-on exposure to AWS and Salesforce.
-						<br /> I enjoy transforming complex requirements into clean, intuitive user experiences while maintaining performance, accessibility, and code quality. Passionate about
-						learning and problem-solving, I continuously explore new technologies and best practices to build impactful digital products.
+					<div>
+
+						<div className={styles.about_me}>
+							Hi, I'm Vaibhav 👋
+
+							I'm a Frontend Software Engineer who enjoys building modern, scalable, and user-focused web applications. <br />
+
+							Over the past 4.5+ years, I've worked with React.js, Next.js, TypeScript, AWS, and Salesforce to develop enterprise customer portals, blockchain platforms, and cloud-based solutions. I enjoy turning complex business requirements into clean, intuitive user experiences while following best practices in performance, accessibility, and maintainability. <br />
+
+							Outside of work, I'm currently exploring AI-powered frontend applications, React Query, and advanced TypeScript to build smarter, more interactive user experiences.
+						</div>
+						{/* <TagGroup
+						items={["4.5+ Years Experience", "React.js & Next.js", "AWS & Salesforce"]}
+					/> */}
 					</div>
 				</div>
 			</section>
