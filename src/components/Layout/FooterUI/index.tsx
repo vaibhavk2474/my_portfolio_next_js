@@ -5,8 +5,14 @@ import LinkdinIcon from "@/icons/LinkdinIcon";
 import LogoImage from "../../UI/LogoImage";
 import { GITHUB_LINK, LINKDIN_LINK } from "@/constants";
 import { Mail as MailIcon, Phone as PhoneIcon } from "@mui/icons-material";
+import { usePathname } from "next/navigation";
 
 function FooterUI() {
+	const pathname = usePathname();
+	const isResumeBuilder = pathname.startsWith("/resume-builder");
+	if (isResumeBuilder) {
+		return null;
+	}
 	return (
 		<footer className={style.container}>
 			<div className={style.box_1}>

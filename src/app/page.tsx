@@ -1,7 +1,6 @@
 import Home from "@/components/MainPage/Home";
 import About from "@/components/MainPage/About";
 import TechStack from "@/components/MainPage/TechStack";
-// import Experience from "@/components/MainPage/Experience";
 import ExperienceEnhanced from "@/components/MainPage/ExperienceEnhanced";
 import Projects from "@/components/MainPage/Projects";
 import Services from "@/components/MainPage/Services";
@@ -13,7 +12,6 @@ export default function HomePage() {
 			<Home />
 			<About />
 			<TechStack />
-			{/* <Experience /> */}
 			<ExperienceEnhanced />
 			<Projects />
 			<Services />
