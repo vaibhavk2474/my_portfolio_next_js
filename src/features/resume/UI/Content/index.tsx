@@ -1,12 +1,16 @@
 "use client";
 
-import { Box } from "@mui/material";
-import React from "react";
+import { Box, Button, IconButton } from "@mui/material";
+import React, { useRef } from "react";
 import styles from "./style.module.css";
 import { useSearchParams } from "next/navigation";
 import About from "../About";
+import Tech from "../Tech";
+import useScroll from "@/features/hooks/useScroll";
+import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 
 function Content() {
+	const [containerRef, isBottom, handleScrollButton] = useScroll();
 	const searchParams = useSearchParams();
 
 	const currentPath = searchParams.get("path")?.toLowerCase();
@@ -18,7 +22,7 @@ function Content() {
 	} else if (currentPath === "about") {
 		displayUI = <About />;
 	} else if (currentPath === "tech-stack") {
-		displayUI = <Box>Tech-stack Page</Box>;
+		displayUI = <Tech />;
 	} else if (currentPath === "experience") {
 		displayUI = <Box>Experience Page</Box>;
 	} else if (currentPath === "projects") {
@@ -29,8 +33,33 @@ function Content() {
 		displayUI = <Box>Contact Page</Box>;
 	}
 	return (
-		<Box component={"main"} className={styles.box + " " + styles.content}>
+		<Box
+			component={"main"}
+			ref={containerRef}
+			className={styles.content}
+			sx={{
+				position: "relative",
+			}}
+		>
 			{displayUI}
+
+			<IconButton
+				sx={{
+					position: "sticky",
+					left: "100%",
+					bottom: 0,
+					color: "currentColor",
+
+					"& svg": {
+						transform: isBottom ? "rotate(180deg)" : "rotate(0deg)",
+						transition: "transform 0.1s",
+					},
+				}}
+				onClick={handleScrollButton}
+			>
+				{/* {isBottom ? "Top" : "Down"} Scroll */}
+				<ExpandCircleDownIcon />
+			</IconButton>
 		</Box>
 	);
 }
