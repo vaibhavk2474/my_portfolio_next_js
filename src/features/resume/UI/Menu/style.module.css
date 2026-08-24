@@ -1,16 +1,17 @@
 .container {
 	border: 1px solid rgba(255, 255, 255, 0.3);
-	padding: 2rem;
+	/* padding: 2rem; */
 	background: linear-gradient(180deg, rgba(2, 148, 207, 0) 0%, rgba(2, 148, 207, 0.3) 100%);
 	border-radius: 0.7rem;
 	overflow: hidden;
 }
 
-.profile {
-	grid-area: profile;
+.menu {
+	grid-area: menu;
 }
 
-.profile_img_box {
-	border-radius: 50%;
-	overflow: hidden;
+.resume_download_btn {
+	background: linear-gradient(273.24deg, #003f58 0%, #0294cf 100%);
+	color: #fff;
+	border-radius: 10px;
 }

@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
-import "@/styles/globals.css";
 import { poppins } from "@/fonts";
 import OuterLayout from "./OuterLayout";
 
-// const inter = Inter({ subsets: ["latin"] });
+import "@/styles/resume.css";
 
 export const metadata: Metadata = {
 	title: "Vaibhav Kumar | Software Developer",
