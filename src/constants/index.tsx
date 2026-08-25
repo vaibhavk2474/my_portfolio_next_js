@@ -20,6 +20,10 @@ export const MENU_LINKS = [
 		link: "#projects",
 	},
 	{
+		name: "Education",
+		link: "#education",
+	},
+	{
 		name: "Services",
 		link: "#services",
 	},

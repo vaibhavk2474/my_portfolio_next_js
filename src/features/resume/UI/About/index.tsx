@@ -10,24 +10,24 @@ const CONSTANTS_INTRO_LIST = [
 ];
 function About() {
 	return (
-		<SectionIntro heading="About" subHeading="Let me introduce my self">
-			<Typography
-				component={"p"}
-				variant="body2"
-				marginTop={"10px"}
-				textAlign={"justify"}
-				sx={{
-					"& span": {
-						marginBottom: "0.5rem",
-						display: "inline-block",
-					},
-				}}
-			>
-				{CONSTANTS_INTRO_LIST.map((i, index) => {
-					return <span key={index}>{i}</span>;
-				})}
-			</Typography>
-		</SectionIntro>
+		// <SectionIntro heading="About" subHeading="Let me introduce my self">
+		<Typography
+			component={"p"}
+			variant="body2"
+			marginTop={"10px"}
+			textAlign={"justify"}
+			sx={{
+				"& span": {
+					marginBottom: "0.5rem",
+					display: "inline-block",
+				},
+			}}
+		>
+			{CONSTANTS_INTRO_LIST.map((i, index) => {
+				return <span key={index}>{i}</span>;
+			})}
+		</Typography>
+		// </SectionIntro>
 	);
 }
 

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./services.module.css";
-import CustomHeadingWithSubheading from "../../UI/CustomHeadingWithSubheading";
 import { motion } from "framer-motion";
 
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
@@ -35,28 +34,35 @@ const SERVICES_LIST = [
 
 function Services() {
 	return (
-		<motion.div className="animated-content" initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} viewport={{ once: true }}>
-			<div id="services" className={styles.container}>
-				<CustomHeadingWithSubheading headingText="Services" subHeadingText="" />
-
-				<div className={styles.list}>
-					{SERVICES_LIST.map((cItem, index) => {
-						const Icon = cItem.Icon;
-						return (
-							<motion.div key={index} whileHover={{ scale: 1.05 }}>
-								<div className={styles.list_item}>
-									<div className={styles.inner_box}>
-										<div className={styles.logo}>{Icon && <Icon />}</div>
-										<div className={styles.service_name}>{cItem.serviceName}</div>
-										<p className={styles.service_summary}>{cItem.serviceSummary}</p>
-									</div>
-								</div>
-							</motion.div>
-						);
-					})}
-				</div>
-			</div>
-		</motion.div>
+		<div
+			id="services"
+			className={"animated-content " + styles.container + " " + styles.list}
+			style={{
+				display: "grid",
+				/* 1. Sets up exactly 2 equal-width columns */
+				gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+				/* 2. Forces ALL rows to automatically match the height of the tallest item */
+				gridAutoRows: "minmax(max-content, 1fr)",
+				gap: "1rem" /* Optional: Adds equal spacing between your cards */,
+			}}
+			initial={{ opacity: 0, y: 80 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 1, ease: "easeOut" }}
+			viewport={{ once: true }}
+		>
+			{SERVICES_LIST.map((cItem, index) => {
+				const Icon = cItem.Icon;
+				return (
+					<div key={index} whileHover={{ scale: 1.05 }} className={styles.list_item}>
+						<div className={styles.inner_box}>
+							<div className={styles.logo}>{Icon && <Icon />}</div>
+							<div className={styles.service_name}>{cItem.serviceName}</div>
+							<p className={styles.service_summary}>{cItem.serviceSummary}</p>
+						</div>
+					</div>
+				);
+			})}
+		</div>
 	);
 }
 

@@ -126,9 +126,9 @@ const CONSTANT_SKILLS: Skills = [
 
 function Tech() {
 	return (
-		<SectionIntro heading="Tech Stack" subHeading="Technologies & tools I’ve been working with recently">
-			<Skills />
-		</SectionIntro>
+		// <SectionIntro heading="Tech Stack" subHeading="Technologies & tools I’ve been working with recently">
+		<Skills />
+		// </SectionIntro>
 	);
 }
 
@@ -136,7 +136,7 @@ function Skills() {
 	return (
 		<Box>
 			{CONSTANT_SKILLS.map((item, index) => (
-				<Box key={index} marginTop={"1rem"}>
+				<Box key={index} marginTop={index ? "1rem" : 0}>
 					<Typography
 						sx={{
 							fontSize: "1rem",
