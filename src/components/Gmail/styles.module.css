@@ -1,9 +1,3 @@
-.container {
-	/* margin: 10rem 0 0 0; */
-
-	/* border: 1px solid red; */
-}
-
 .gmail_box {
 	max-width: 80rem;
 
@@ -108,8 +102,6 @@
 	position: relative;
 }
 
-.template-list {
-}
 .template-container {
 	position: absolute;
 	top: 25px;
