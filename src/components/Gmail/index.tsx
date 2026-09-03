@@ -130,7 +130,7 @@ function GmailBox() {
 				formData.append("files", file);
 			});
 
-			const response = await fetch(`${END_POINT}/api/mail`, {
+			const response = await fetch(`/api/mail`, {
 				method: "POST",
 				body: formData,
 			});
