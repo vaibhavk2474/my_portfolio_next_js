@@ -5,22 +5,16 @@ import Navbar from "@/components/Layout/Navbar";
 import { ThemeContext } from "@/context/SwitchMode";
 import React, { useContext } from "react";
 
-function InnerLayout({
-  poppins,
-  children,
-}: {
-  poppins: any;
-  children: React.ReactNode;
-}) {
-  const theme = useContext(ThemeContext);
+function InnerLayout({ fonts, children }: { fonts: any; children: React.ReactNode }) {
+	const theme = useContext(ThemeContext);
 
-  return (
-    <body className={poppins.className + " " + `${theme?.mode}`}>
-      <Navbar />
-      {children}
-      <FooterUI />
-    </body>
-  );
+	return (
+		<body className={fonts.className + " " + `${theme?.mode}`}>
+			<Navbar />
+			{children}
+			<FooterUI />
+		</body>
+	);
 }
 
 export default InnerLayout;
