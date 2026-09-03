@@ -4,6 +4,7 @@ import Header from "@/features/resume/UI/Header";
 import Menu from "@/features/resume/UI/Menu";
 import Profile from "@/features/resume/UI/Profile";
 import { Box } from "@mui/material";
+import { Suspense } from "react";
 
 const bg_color = "#001822";
 
@@ -28,7 +29,9 @@ function InnerLayout({ poppins, children }: { poppins: any; children: React.Reac
 			}}
 		>
 			<Header />
-			<Profile />
+			<Suspense fallback="Loading...">
+				<Profile />
+			</Suspense>
 			{children}
 			<Menu />
 		</Box>

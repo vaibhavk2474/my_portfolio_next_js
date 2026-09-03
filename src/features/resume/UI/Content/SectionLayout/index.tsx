@@ -15,7 +15,8 @@ function SectionLayout({ heading, subHeading, currentPath, children }: IntroProp
 
 	useEffect(() => {
 		handleScrollTop();
-	}, [currentPath]);
+	}, [currentPath, handleScrollTop]);
+
 	return (
 		<Box component={"main"} className={styles.content}>
 			{heading && (

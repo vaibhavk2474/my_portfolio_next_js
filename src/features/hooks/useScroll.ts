@@ -1,20 +1,20 @@
-import { RefObject, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { RefObject, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 function useScroll(pathname: string | undefined): [RefObject<HTMLDivElement | null>, boolean, () => void, () => void, boolean] {
     const [isBottom, setIsBottom] = useState<boolean>(false);
     const [sholudShowScroll, setSholudShowScroll] = useState<boolean>(true);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const handleScrollTop = () => {
+    const handleScrollTop = useCallback(() => {
         if (!containerRef.current) return;
 
         containerRef.current.scrollTo({
             top: 0,
             behavior: "smooth",
         });
-    };
+    }, []);
 
-    const handleScrollButtonClick = () => {
+    const handleScrollButtonClick = useCallback(() => {
         if (!containerRef.current) return;
 
         if (isBottom) {
@@ -30,7 +30,7 @@ function useScroll(pathname: string | undefined): [RefObject<HTMLDivElement | nu
                 behavior: "smooth",
             });
         }
-    };
+    }, [isBottom]);
 
     useEffect(() => {
         const element = containerRef.current
@@ -58,9 +58,6 @@ function useScroll(pathname: string | undefined): [RefObject<HTMLDivElement | nu
             element.removeEventListener('scroll', handleScroll)
         }
     }, [pathname])
-
-
-
 
     return [containerRef, isBottom, handleScrollButtonClick, handleScrollTop, sholudShowScroll]
 }
