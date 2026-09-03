@@ -12,7 +12,7 @@ function Profile() {
 					<Image src={"/images/profile-pic_bg.jpg"} alt="profile background image" fill sizes="(max-width: 768px) 250px, 400px" />
 
 					<div className={styles.profile_img_box}>
-						<Image src={"/images/image_profile.jfif"} alt="profile image" fill sizes="(max-width: 768px) 250px, 400px" />
+						<Image src={"/images/image_profile.jpg"} alt="profile image" fill sizes="(max-width: 768px) 250px, 400px" />
 					</div>
 				</Box>
 				<Box sx={{}}>
