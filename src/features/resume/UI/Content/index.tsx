@@ -52,6 +52,7 @@ function Content() {
 		heading = "Contact Me";
 		subHeading = "";
 	}
+
 	return (
 		<SectionLayout heading={heading} subHeading={subHeading} currentPath={currentPath}>
 			{displayUI}

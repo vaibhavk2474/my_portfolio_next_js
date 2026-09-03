@@ -4,16 +4,30 @@ import styles from "./style.module.css";
 import { MENU_LINKS } from "@/constants";
 import Link from "next/link";
 import Switch from "../../components/Switch";
+import { useSearchParams } from "next/navigation";
 
 function Menu() {
+	const searchParams = useSearchParams();
+	const currentPath = searchParams.get("path")?.toLowerCase();
 	return (
 		<Box component={"aside"} className={styles.container + " " + styles.menu}>
 			<nav aria-label="nav menu">
 				<List>
-					{MENU_LINKS.map((cLink) => {
+					{MENU_LINKS.filter((c) => c.name.toLocaleLowerCase() != "home").map((cLink) => {
 						return (
 							<ListItem key={cLink.name} disablePadding>
-								<ListItemButton LinkComponent={Link} href={`/resume?path=${cLink.link.slice(1)}`}>
+								<ListItemButton
+									LinkComponent={Link}
+									href={`/resume?path=${cLink.link.slice(1)}`}
+									sx={{
+										...(currentPath === cLink.link.slice(1) && {
+											// background: "linear-gradient(273.24deg, #003f58 0%, #0294cf 100%)",
+											background: "rgba(255, 255, 255, 0.1)",
+											color: "#fff",
+											// borderRadius: "8px",
+										}),
+									}}
+								>
 									{/* <ListItemIcon>
 										<InboxIcon />
 									</ListItemIcon> */}
