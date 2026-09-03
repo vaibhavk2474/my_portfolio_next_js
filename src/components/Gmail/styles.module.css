@@ -1,0 +1,151 @@
+.gmail_box {
+	max-width: 80rem;
+
+	border: 1px solid #e5e5e5;
+	border-radius: 10px;
+	padding: 2rem;
+	margin: 4rem auto;
+}
+
+.input_box {
+	display: flex;
+	align-items: start;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+
+	border-bottom: 2px solid #e5e5e5;
+}
+.input_box label {
+	margin-right: 1rem;
+	opacity: 0.5;
+}
+.input_box input,
+.input_box textarea {
+	width: 100%;
+	/* border: 1px solid red; */
+}
+.input_box input:hover,
+.input_box input:focus {
+	outline: none;
+}
+.input_box textarea:hover,
+.input_box textarea:focus {
+	outline: none;
+}
+
+.to_email_list {
+	/* border: 1px solid #e5e5e5; */
+	/* border-radius: 10px; */
+	padding: 0.5rem;
+	margin: 1rem 0;
+	overflow: auto;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	max-height: 20rem;
+}
+.email_name {
+	border: 1px solid #e5e5e5;
+	border-radius: 10px;
+	padding: 0.2rem 0.5rem;
+	margin-right: 0.5rem;
+
+	display: flex;
+	align-items: center;
+}
+.email_name svg {
+	margin-left: 0.5rem;
+	cursor: pointer;
+}
+.input_outer_box {
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+
+	border-bottom: 2px solid #e5e5e5;
+}
+.input_inner_box {
+	display: flex;
+	width: 100%;
+}
+
+.input_inner_box input {
+	width: 100%;
+}
+
+.input_inner_box input:hover,
+.input_inner_box input:focus {
+	outline: none;
+}
+.input_inner_box label {
+	margin-right: 1rem;
+	opacity: 0.5;
+}
+
+.error {
+	color: red;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+.heading {
+	font-size: 2rem;
+}
+
+.cu-relative {
+	position: relative;
+}
+
+.template-container {
+	position: absolute;
+	top: 25px;
+	left: 0;
+
+	border: 1px solid #e5e5e5;
+	min-width: 200px;
+	max-width: 100%;
+
+	background: #fff;
+
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.template-item {
+	padding: 0.5rem;
+	background: #fff;
+	border-bottom: 1px solid #e5e5e5;
+}
+.template-item:hover {
+	background: rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+}
+
+.template-container :global(.template-actions) {
+	padding: 4px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 8px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.template-btn {
+	padding: 4px 8px;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+}
+
+.template-btn:hover {
+	background: rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+}
+.template-btn:active {
+	background: rgba(0, 0, 0, 0.09);
+}

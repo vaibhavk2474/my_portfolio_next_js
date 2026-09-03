@@ -18,15 +18,12 @@ function About() {
 						years of experiences
 					</div>
 					<div>
-
 						<div className={styles.about_me}>
-							Hi, I'm Vaibhav 👋
-
-							I'm a Frontend Software Engineer who enjoys building modern, scalable, and user-focused web applications. <br />
-
-							Over the past 4.5+ years, I've worked with React.js, Next.js, TypeScript, AWS, and Salesforce to develop enterprise customer portals, blockchain platforms, and cloud-based solutions. I enjoy turning complex business requirements into clean, intuitive user experiences while following best practices in performance, accessibility, and maintainability. <br />
-
-							Outside of work, I'm currently exploring AI-powered frontend applications, React Query, and advanced TypeScript to build smarter, more interactive user experiences.
+							Hi, I&apos;m Vaibhav 👋 I&apos;m a Frontend Software Engineer who enjoys building modern, scalable, and user-focused web applications. <br />
+							Over the past 4.5+ years, I&apos;ve worked with React.js, Next.js, TypeScript, AWS, and Salesforce to develop enterprise customer portals, blockchain platforms, and
+							cloud-based solutions. I enjoy turning complex business requirements into clean, intuitive user experiences while following best practices in performance, accessibility,
+							and maintainability. <br />
+							Outside of work, I&apos;m currently exploring AI-powered frontend applications, React Query, and advanced TypeScript to build smarter, more interactive user experiences.
 						</div>
 						{/* <TagGroup
 						items={["4.5+ Years Experience", "React.js & Next.js", "AWS & Salesforce"]}
