@@ -16,33 +16,49 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-const ALL_TO_EMAIL_LIST = []
-
 export async function POST(request: Request, res: Response) {
-
   try {
+    const formData = await request.formData();
+    const emailJsonString = formData.get('emailJsonData') as string;
+    const files = formData.getAll('files') as File[];
 
-    const req = await request.json();
+    const emailJsonData = JSON.parse(emailJsonString)
+    console.log('formData: emailJsonData, attachments ', emailJsonData, files)
 
-    ALL_TO_EMAIL_LIST.push(req.toEmailList)
+    const html = formatEmailBody(emailJsonData.subject, emailJsonData.message)
 
-    console.error('.....................................')
-    const html = formatEmailBody(req, req.message)
-    console.error('.....................................html...', typeof html)
+    const filePaths = emailJsonData.filePaths || [];
+
+    const resolvedFilePaths = filePaths.map((filePath: string) => {
+      const p = path.join(process.cwd(), 'public', "pdfs", filePath);
+      return {
+        filename: filePath,
+        path: p,
+        contentType: 'application/pdf'
+      }
+    });
+
+    // Convert files to attachments for nodemailer
+    const attachments = await Promise.all(
+      files.map(async (file) => {
+        const arrayBuffer = await file.arrayBuffer();
+        return {
+          filename: file.name,
+          content: Buffer.from(arrayBuffer),
+          contentType: file.type,
+        };
+      })
+    );
 
     const result = await transporter.sendMail({
-      from: req.fromEmail,
-      to: req.toEmailList,
-      cc: 'cc-recipient@example.com', // CC recipient
-      bcc: 'bcc-recipient@example.com', // BCC recipient
-      subject: req.subject,
-      text: req.message,
+      from: `"Vaibhav Kumar" <vaibhavk2474@gmail.com>`,
+      to: emailJsonData.toEmailList,
+      cc: emailJsonData.cc,
+      bcc: emailJsonData.bcc,
+      subject: emailJsonData.subject,
+      text: emailJsonData.message,
       html,
-      attachments: [{
-        filename: 'resume.pdf',
-        path: filePath,
-        contentType: 'application/pdf'
-      }],
+      attachments: [...attachments, ...resolvedFilePaths]
     });
 
     const res = JSON.stringify(result, null, 4)
@@ -68,13 +84,24 @@ export async function POST(request: Request, res: Response) {
 }
 
 // Convert raw textarea line breaks into styled HTML paragraphs
-function formatEmailBody(req = { subject: '' }, rawText: string) {
+function formatEmailBody(subject: string, rawText: string) {
   // const paragraphs = rawText
   //   .split(/\n+/)
   //   .map(p => `<p style="margin: 0 0 14px 0; line-height: 1.6; color: #202124; font-size: 14px;">${p.trim()}</p>`)
   //   .join('');
 
-  const cleanHtml = xss(rawText, XSS_BACKEND_CONFIG);
+  const cleanedParagraphs = rawText
+    .replace(/<p>\s*(?:&nbsp;|<br\s*\/?>)?\s*<\/p>/gi, '')
+    .trim();
+  const cleanHtml = xss(cleanedParagraphs, XSS_BACKEND_CONFIG);
+  console.log("cleanHtml", cleanHtml, typeof cleanHtml);
+
+  const cleanedParagraphs1 = rawText
+    .replace(/<p[^>]*>(?:\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '<br/>')
+    .trim();
+
+  const cleanHtml1 = xss(cleanedParagraphs1, XSS_BACKEND_CONFIG);
+  console.log("cleanHtml1", cleanHtml1, typeof cleanHtml1);
 
   return `
   <!DOCTYPE html>
@@ -82,24 +109,35 @@ function formatEmailBody(req = { subject: '' }, rawText: string) {
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <style>
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        table.email-table {
+          margin: 0 auto;
+        }
+      </style>
     </head>
     <body style="margin: 0; padding: 24px; background-color: #f6f8fc; font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;">
       
       <!-- Main Email Card -->
-      <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; border: 1px solid #dadce0; overflow: hidden;">
+      <table class="email-table" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; border: 1px solid #dadce0; overflow: hidden;">
         
         <!-- Header / Sender Accent Bar -->
         <tr>
           <td style="padding: 24px 32px 16px 32px; border-bottom: 1px solid #f1f3f4;">
             <span style="font-size: 13px; font-weight: 600; color: #1a73e8; text-transform: uppercase; letter-spacing: 0.5px;">Message</span>
-            <h2 style="margin: 6px 0 0 0; font-size: 18px; color: #202124; font-weight: 500;">${req.subject || 'No Subject'}</h2>
+            <h2 style="margin: 6px 0 0 0; font-size: 18px; color: #202124; font-weight: 500;">${subject || 'No Subject'}</h2>
           </td>
         </tr>
 
         <!-- Body Content -->
         <tr>
           <td style="padding: 24px 32px 32px 32px;">
-            ${cleanHtml}
+            ${cleanHtml1}
           </td>
         </tr>
 

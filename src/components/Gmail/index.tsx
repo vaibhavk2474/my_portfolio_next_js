@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./gmail.module.css";
+import styles from "./styles.module.css";
 import { CircularProgress } from "@mui/material";
 import RichTextEditor from "./RichTextEditor";
-import { RichTextEditorRef } from "./types";
+import { HandleFileChnageType, RichTextEditorRef, TemplateType } from "./types";
 import DOMPurify from "dompurify";
 import { DOMPURIFY_CONFIG } from "@/lib/sanitizeConfig";
+import Templates from "./Templates";
 
 const END_POINT = process.env.NEXT_PUBLIC_API_END_POINT;
 
@@ -26,14 +27,18 @@ function GmailBox() {
 		error: null,
 		data: null,
 	});
-
-	const [fromEmail, setFromEmail] = useState("");
+	// const [fromEmail, setFromEmail] = useState(process.env.NEXT_PUBLIC_GMAIL_NODEMAILER_USERNAME || "");
+	const fromEmail = process.env.NEXT_PUBLIC_GMAIL_NODEMAILER_USERNAME || "";
 	const [toEmail, setToEmail] = useState("");
 	const [message, setMessage] = useState("");
 	const [subject, setSubject] = useState("");
 	const [toEmailList, setToEmailList] = useState<Email[]>([]);
+	const [attachments, setAttachments] = useState<File[] | undefined>([]);
+	const [filePaths, setFilePaths] = useState<string[] | undefined>([]);
 
 	const editorRef = useRef<RichTextEditorRef>(null);
+
+	console.log("process.env.NEXT_PUBLIC_GMAIL_NODEMAILER_USERNAME ", process.env.NEXT_PUBLIC_GMAIL_NODEMAILER_USERNAME);
 
 	const handleAddEmail = () => {
 		if (!toEmail) {
@@ -46,11 +51,13 @@ function GmailBox() {
 		};
 
 		setToEmailList([emailObj, ...toEmailList]);
+		setToEmail("");
 	};
 
 	const handleDeleteEmail = (id: any) => {
 		setToEmailList(toEmailList.filter((c) => c.id !== id));
 	};
+
 	const handleSubmit = async () => {
 		/*if ([fromEmail, message, subject].filter(Boolean).length < 3 || (toEmailList.length <= 0 && !toEmail)) {
 			const allDataToValidate = {
@@ -102,20 +109,30 @@ function GmailBox() {
 			data: null,
 		}));
 
-		// 1. Frontend Sanitization
-		const sanitizedFrontendMessage = DOMPurify.sanitize(message, DOMPURIFY_CONFIG);
-
-		console.log("sanitizedFrontendMessage", typeof message, sanitizedFrontendMessage, typeof sanitizedFrontendMessage);
 		try {
+			const sanitizedFrontendMessage = DOMPurify.sanitize(message, DOMPURIFY_CONFIG);
+
+			console.log("sanitizedFrontendMessage", sanitizedFrontendMessage, typeof sanitizedFrontendMessage);
+			const emailJsonData = JSON.stringify({
+				toEmail,
+				fromEmail,
+				message: sanitizedFrontendMessage,
+				subject,
+				toEmailList: toEmailList.map((c) => c.toEmail),
+				filePaths,
+			});
+
+			const formData = new FormData();
+			formData.append("emailJsonData", emailJsonData);
+
+			// Append all binary files
+			(attachments || []).forEach((file) => {
+				formData.append("files", file);
+			});
+
 			const response = await fetch(`${END_POINT}/api/mail`, {
 				method: "POST",
-				body: JSON.stringify({
-					toEmail,
-					fromEmail,
-					message: sanitizedFrontendMessage,
-					subject,
-					toEmailList: toEmailList.map((c) => c.toEmail),
-				}),
+				body: formData,
 			});
 
 			const res = await response.json();
@@ -139,21 +156,43 @@ function GmailBox() {
 		}
 	};
 
-	useEffect(() => {
-		setFromEmail("vaibhavk2474@gmail.com");
-		setSubject("Application for React Js Developer position Vaibhav Kumar");
-		setMessage(
-			"Dear sir/ma'am,\n\n\t\t\tMy name is Vaibhav Kumar. I am React/Next js developer having skills in React, Next, Redux, JavaScript and HTML/ CSS . I have worked at Incipient infotech React developer for 1.3 year. I have total experience of 3 years in same. I am looking for job change in React js. Please consider my profile if your company has job opportunity for me in React js. \n\nThank you",
-		);
-	}, []);
+	const handleFileChange = (props: HandleFileChnageType) => {
+		if (!props.isValid) {
+			setApiState((preState) => ({
+				...preState,
+				error: new Error(props.error),
+			}));
+		} else {
+			console.log(props);
+			setApiState((preState) => ({
+				...preState,
+				error: null,
+			}));
+			setAttachments(props.selectedFiles);
+		}
+	};
+
+	const handleTemplateClick = (template: TemplateType) => {
+		console.log("Template clicked: ", template);
+		setSubject(template.subject);
+		setMessage(template.body);
+		setFilePaths(template.filePaths);
+	};
+
+	const handleRemoveFilePath = (filePath: string) => {
+		setFilePaths((prev) => prev?.filter((path) => path !== filePath));
+	};
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.gmail_box}>
-				<h3 className={styles.heading}>New Message</h3>
+				<div className={styles.header}>
+					<h3 className={styles.heading}>New Message</h3>
+					<Templates onTemplateClick={handleTemplateClick} />
+				</div>
 				<div className={`${styles.from_box} ${styles.input_box}`}>
 					<label htmlFor="from">From</label>
-					<input type="email" id="from" value={fromEmail} onChange={(e) => setFromEmail(e.target.value)} />
+					<input type="email" id="from" value={fromEmail} readOnly />
 				</div>
 				<div className={`${styles.to_box}  ${styles.input_outer_box}`}>
 					<div className={styles.input_inner_box}>
@@ -190,7 +229,14 @@ function GmailBox() {
 						Message
 					</label>
 					{/* <textarea name="message" id="message" rows={10} cols={10} value={message} onChange={(e) => setMessage(e.target.value)}></textarea> */}
-					<RichTextEditor ref={editorRef} value={message} onChange={(string) => setMessage(string)} />
+					<RichTextEditor
+						ref={editorRef}
+						filePaths={filePaths}
+						handleRemoveFilePath={handleRemoveFilePath}
+						onFileChange={handleFileChange}
+						value={message}
+						onChange={(string) => setMessage(string)}
+					/>
 				</div>
 				<div className={styles.submit_box}>
 					<button className="btn" onClick={apiState.isLoading ? undefined : handleSubmit}>

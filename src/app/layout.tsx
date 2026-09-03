@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 import "@/styles/globals.css";
-import { poppins } from "@/fonts";
+// import { poppins } from "@/fonts";
+import { Roboto } from "next/font/google";
+
+export const roboto = Roboto({
+	weight: ["400", "500", "700"], // choose the weights you need
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-roboto", // optional: use if you use Tailwind / CSS variables
+});
+
 import OuterLayout from "./OuterLayout";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -22,7 +31,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<OuterLayout poppins={poppins}>{children}</OuterLayout>
+			<OuterLayout fonts={roboto}>{children}</OuterLayout>
 		</html>
 	);
 }
